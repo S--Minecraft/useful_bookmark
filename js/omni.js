@@ -17,7 +17,6 @@ function db_query(sql, id) {
 }
 
 chrome.runtime.onMessage.addListener(function(items, sender, sendRes) {
-  console.log(items);
   var itemLen = items.length;
   if(itemLen === 1) {
     // マッチしたものが1つの場合は転送
@@ -56,7 +55,6 @@ chrome.runtime.onMessage.addListener(function(items, sender, sendRes) {
             html += '<p>' + tagNames + '</p>';
           }
           html += '</div><div class="card-action"><a href="' + items[i].url + '">開く</a></div></div></div>';
-          console.log(html);
         }
         // htmlを適応
         $(document.documentElement).find("#result").append(html);

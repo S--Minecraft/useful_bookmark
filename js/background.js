@@ -62,7 +62,6 @@ chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
   var sql = generateSQL(text);
   db_query(sql).done(function(rset) {
     rset = rset[0];
-    console.log(rset);
     var response = [];
     for (var i = 0; i < rset.rows.length; i++) {
       var item = rset.rows.item(i);
